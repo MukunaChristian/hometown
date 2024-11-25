@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kinshasa - My Hometown</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./script/script.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Welcome to Kinshasa</h1>
+        <p>Discover the vibrant culture, scenic views, and rich history of my hometown.</p>
     </header>
 
     <main>
@@ -16,7 +18,7 @@
         <section id="about">
             <h2>About Me</h2>
             <p>Hello! I'm Christian Mukuna from Kinshasa, and I love Cape Town!</p>
-            <img src="./me.jpg" alt="Your photo" class="image-about-me">
+            <img src="./images/me.jpg" alt="Christian Mukuna" class="image-placeholder">
             <button id="greetButton">Click to Say Hi!</button>
             <p id="greetingMessage"></p>
         </section>
@@ -25,7 +27,7 @@
         <section id="kinshasa-info">
             <h2>About Kinshasa</h2>
             <p>Kinshasa is the capital of the Democratic Republic of the Congo.</p>
-            <img src="./download (1).jpeg" alt="Kinshasa city view" class="image-placeholder">
+            <img src="./images/download (4).jpeg" alt="Kinshasa City View" class="image-placeholder">
             <h3>Things to See:</h3>
             <ul id="thingsToSeeList"></ul>
             <h3>Things to Do:</h3>
@@ -34,60 +36,26 @@
             <button id="moreInfoButton">More Info</button>
             <p id="extraInfo"></p>
         </section>
+
+        <!-- Video Section -->
+        <section id="video">
+            <h2>Kinshasa in Motion</h2>
+            <video controls width="100%" class="video-player">
+                <source src="./images/videoplayback.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <!-- Additional Images Section -->
+        <section id="images">
+            <h2>Kinshasa in Pictures</h2>
+            <img src="./images/download (1).jpeg" alt="Congo River in Kinshasa" class="image-large">
+            <img src="./images/images (1).jpeg" alt="Lola ya Bonobo Sanctuary" class="image-large">
+        </section>
     </main>
 
     <footer>
         <p>Created by a Cape enthusiast from Kinshasa</p>
     </footer>
-
-    <script>
-        // Initial data for things to see and do
-        const thingsToSee = ["Palais de la Nation", "Cathédrale Notre-Dame du Congo"];
-        const thingsToDo = [
-            "Visit Lola ya Bonobo sanctuary",
-            "Explore art at Académie des Beaux-Arts",
-            "Shop at Marché Central"
-        ];
-
-        // Function to display a list dynamically
-        function displayList(list, elementId) {
-            const element = document.getElementById(elementId);
-            element.innerHTML = ""; // Clear existing content
-            list.forEach(item => {
-                const li = document.createElement("li");
-                li.textContent = item;
-                element.appendChild(li);
-            });
-        }
-
-        // Initial display of the lists
-        displayList(thingsToSee, "thingsToSeeList");
-        displayList(thingsToDo, "thingsToDoList");
-
-        // Handle "Say Hi!" Button Click
-        document.getElementById("greetButton").addEventListener("click", () => {
-            const greetingMessage = document.getElementById("greetingMessage");
-            greetingMessage.textContent = "Hi there! Greetings from Kinshasa!";
-        });
-
-        // Handle "More Info" Button Click
-        document.getElementById("moreInfoButton").addEventListener("click", () => {
-            const extraInfo = document.getElementById("extraInfo");
-            if (extraInfo.textContent === "") {
-                extraInfo.textContent = "Kinshasa, located along the Congo River, is known for its vibrant culture, music, and cuisine.";
-            } else {
-                extraInfo.textContent = "";
-            }
-        });
-
-        // Handle "Add a Thing to Do" Button Click
-        document.getElementById("addThingToDoButton").addEventListener("click", () => {
-            const newThing = prompt("Enter a new thing to do in Kinshasa:");
-            if (newThing) {
-                thingsToDo.push(newThing); // Add the new thing to the list
-                displayList(thingsToDo, "thingsToDoList"); // Update the display
-            }
-        });
-    </script>
 </body>
 </html>
