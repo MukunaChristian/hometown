@@ -28,7 +28,7 @@ header p {
 h1,
 h2,
 h3 {
-    color: white;
+    color: black;
 }
 
 /* Section Styling */
@@ -63,6 +63,8 @@ ul {
 .video-player {
     border-radius: 5px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    height: 20em!important;
 }
 
 /* Footer Styling */
