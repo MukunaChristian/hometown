@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinshasa - My Hometown</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Kinshasa</h1>
+    </header>
+
+    <main>
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm Christian Mukuna from Kinshasa, and I love Cape Town!</p>
+            <img src="./me.jpg" alt="Your photo" class="image-about-me">
+            <button id="greetButton">Click to Say Hi!</button>
+            <p id="greetingMessage"></p>
+        </section>
+
+        <!-- Kinshasa Info Section -->
+        <section id="kinshasa-info">
+            <h2>About Kinshasa</h2>
+            <p>Kinshasa is the capital of the Democratic Republic of the Congo.</p>
+            <img src="./download (1).jpeg" alt="Kinshasa city view" class="image-placeholder">
+            <h3>Things to See:</h3>
+            <ul id="thingsToSeeList"></ul>
+            <h3>Things to Do:</h3>
+            <ul id="thingsToDoList"></ul>
+            <button id="addThingToDoButton">Add a Thing to Do</button>
+            <button id="moreInfoButton">More Info</button>
+            <p id="extraInfo"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by a Cape enthusiast from Kinshasa</p>
+    </footer>
+
+    <script>
+        // Initial data for things to see and do
+        const thingsToSee = ["Palais de la Nation", "Cathédrale Notre-Dame du Congo"];
+        const thingsToDo = [
+            "Visit Lola ya Bonobo sanctuary",
+            "Explore art at Académie des Beaux-Arts",
+            "Shop at Marché Central"
+        ];
+
+        // Function to display a list dynamically
+        function displayList(list, elementId) {
+            const element = document.getElementById(elementId);
+            element.innerHTML = ""; // Clear existing content
+            list.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                element.appendChild(li);
+            });
+        }
+
+        // Initial display of the lists
+        displayList(thingsToSee, "thingsToSeeList");
+        displayList(thingsToDo, "thingsToDoList");
+
+        // Handle "Say Hi!" Button Click
+        document.getElementById("greetButton").addEventListener("click", () => {
+            const greetingMessage = document.getElementById("greetingMessage");
+            greetingMessage.textContent = "Hi there! Greetings from Kinshasa!";
+        });
+
+        // Handle "More Info" Button Click
+        document.getElementById("moreInfoButton").addEventListener("click", () => {
+            const extraInfo = document.getElementById("extraInfo");
+            if (extraInfo.textContent === "") {
+                extraInfo.textContent = "Kinshasa, located along the Congo River, is known for its vibrant culture, music, and cuisine.";
+            } else {
+                extraInfo.textContent = "";
+            }
+        });
+
+        // Handle "Add a Thing to Do" Button Click
+        document.getElementById("addThingToDoButton").addEventListener("click", () => {
+            const newThing = prompt("Enter a new thing to do in Kinshasa:");
+            if (newThing) {
+                thingsToDo.push(newThing); // Add the new thing to the list
+                displayList(thingsToDo, "thingsToDoList"); // Update the display
+            }
+        });
+    </script>
+</body>
+</html>
