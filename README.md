@@ -11,4 +11,4 @@ This project is a simple web page introducing Kinshasa, the vibrant capital of t
 ## How to Run
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/kinshasa-page.git
+   git clone https://github.com/MukunaChristian/hometown.git
